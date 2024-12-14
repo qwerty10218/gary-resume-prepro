@@ -1,0 +1,16 @@
+.c-artist-card
+  max-width: 45rem
+  &.--size-lg
+    max-width: 56rem
+  &.--reverse &__link
+    display: flex
+    flex-direction: column-reverse
+  &__link
+  &__img-mask
+    // mix-blend-mode: multiply
+    filter: grayscale(100%)
+    // filter: blur(0.7px)
+    transition: filter 0.5s
+    &:hover
+      filter: blur(0)
+      filter:drop-shadow(8px 8px 10px #000)

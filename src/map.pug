@@ -1,0 +1,28 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    //- 新增 maximum-scale=1.0, user-scalable=0 防止手機點擊表單畫面放大
+    meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
+
+    //- 非正式或練習用網站，可設置此 meta 防止瀏覽器索引
+    meta(name="robots", content="noindex, nofollow")
+
+    //- 防止 iphone 自動加入撥號連結
+    meta(http-equiv="x-rim-auto-match", content="none")
+    meta(name="format-detection", content="telephone=no")
+
+    //- FB 縮圖資訊，偵錯及預覽工具https://developers.facebook.com/tools/debug/
+    meta(property="og:type", content="website")
+    meta(property="og:url", content="輸入完整當前頁面的網址")
+    meta(property="og:image", content="輸入絕對的圖片路徑")
+    //- title => pageTitle - siteName｜infoTitle
+    meta(property="og:title", content="地圖導覽 - （專案實作）Megaport Festival 大港開唱 2021｜網頁前端設計，建立開發環境並實作完整互動式網站")
+    meta(property="og:description", content="輸入網站描述")
+
+    //- 因為編譯完成 index.html 會在 dist 裡面
+    //- 所以要連動 css 要以 dist 資料夾為根目錄去思考
+    link(rel="stylesheet", href="css/style.css")
+    title 地圖導覽 - （專案實作）Megaport Festival 大港開唱 2021｜網頁前端設計，建立開發環境並實作完整互動式網站
+  body
+    h1 我的專案

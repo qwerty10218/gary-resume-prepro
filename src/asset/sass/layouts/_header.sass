@@ -1,0 +1,69 @@
+.l-header
+  position: fixed
+  // 因為 fixed 會造成寬度不撐滿
+  left: 0
+  top: 0
+  width: 100%
+  z-index: 99
+  display: flex
+  justify-content: center
+  align-items: center
+  padding: var(--spacing-24) 3.5vw
+  background-color: var(--color-night-brown)
+  &__burger
+    display: none
+  +media(md)
+    padding: var(--spacing-16) 4vw
+    justify-content: flex-end
+    &__burger
+      display: block
+
+    
+.c-nav
+  &__menu
+    display: flex
+  &__btn-box
+    display: flex
+    color: var(--color-blue-grey)
+  &__btn-wrap:not(:last-child)
+    margin-right: 6.5vw
+  &__btn
+    line-height: 1.2
+
+  
+   
+  +media(md)
+    position: fixed
+    left: 0
+    top: 0
+    +size(100%)
+    background-color: var(--color-dark-brown)
+    opacity: 0
+    // 讓滑鼠無作用
+    pointer-events: none
+    transition: opacity 0.5s
+    &.is-opened
+      opacity: 1
+      pointer-events: auto
+      overflow: auto
+    &__menu
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      width: 100%
+      min-height: 100%
+  +media(md)
+    &__btn-box
+      flex-direction: column
+      align-items: center
+    &__btn-wrap
+      margin-right: 0 !important
+      margin-bottom: var(--spacing-24)
+    &__btn
+      text-align: center
+
+#nav-switcher:checked ~ .c-nav
+  opacity: 1
+  pointer-events: auto
+  overflow: auto
+  // 內容物超出範圍時，滾軸出現

@@ -1,0 +1,57 @@
+script(src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js")
+script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous")
+script(src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js")
+//- 使用絕對單位，確保不管多深的頁面資料，都能正常被引入
+script(src=`${baseUrl}/js/lazyload.min.js`)
+script(src=`${baseUrl}/js/aos.min.js`)
+script.
+  AOS.init({
+    // 設定物件頂部距離視窗底部多少才動畫
+    offset: 200,
+    duration: 500,
+    //- once: true
+  });
+script(src=`${baseUrl}/js/main.min.js`) 
+
+script.
+  document.addEventListener("DOMContentLoaded", function() {
+    // 設定 PDF.js 的 workerSrc 路徑
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js';
+
+    var url = '../dist/pdf/resume.pdf';
+    var pdfFrame = document.getElementById('pdf-frame');
+    
+    // 設置 PDF.js 相關屬性
+    var loadingTask = pdfjsLib.getDocument(url);
+    loadingTask.promise.then(function(pdf) {
+      console.log('PDF loaded');
+      
+      // 取得第一頁
+      pdf.getPage(1).then(function(page) {
+        console.log('Page loaded');
+        
+        var scale = 1.5; 
+        var viewport = page.getViewport({ scale: scale });
+        
+        // 設置 canvas
+        var canvas = document.getElementById('pdf-canvas');
+        var context = canvas.getContext('2d');
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+
+        // 渲染 PDF 頁面
+        var renderContext = {
+          canvasContext: context,
+          viewport: viewport
+        };
+        page.render(renderContext);
+      });
+    }, function(error) {
+      console.error('Error loading PDF: ' + error);
+    });
+  });
+  console.log("Scripts 已加載");
+
+  window.showPdf = function() {
+    console.log("showPdf 被觸發");
+  };

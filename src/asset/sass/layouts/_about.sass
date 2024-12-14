@@ -1,0 +1,32 @@
+.l-about
+  &__img-mask
+    height: 100%
+    transform-origin: right bottom
+    overflow: hidden
+  &__img
+    +size(100%)
+    transform-origin: right bottom
+    background-image: url('../img/headshot.jpg')
+    background-size: cover
+    background-position: center center
+    max-width: 60%
+    transition: background 1s cubic-bezier(.23, .83, .7, 1)
+  &__content-wrap
+    padding: var(--spacing-40) 0 var(--spacing-80)
+  &__content:first-child
+    margin-left: -16rem
+
+  +media(sm)
+    &__img-mask
+      height: 60vw
+    &__content:first-child
+      margin-left: 0
+    &__content-wrap
+      padding-left: 5vw
+
+  +media(xs)
+    &::before
+      +size(40%, 6rem)
+      background-size: 24% 100%
+    &__content-wrap
+      padding-top: var(--spacing-24)
