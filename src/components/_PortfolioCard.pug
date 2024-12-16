@@ -9,11 +9,6 @@ mixin ArtistCard(options)
       link: '##'
     }, options);
 
-    const classes = [
-      props.size ? `--size-${props.size}` : '',
-      props.direction ? `--${props.direction}` : '',
-    ];
-
   //- classes.join(' ') => "--size-lg --reverse"
   article.c-artist-card(class=classes.join(' ') data-aos="fade-up")
     a.c-artist-card__link(href=props.link)
