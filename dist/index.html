@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+
+<!-- 載入畫面結構-->
+<div class="loader">
+  <div class="loading-text">網頁載入中</div>
+  <div class="progress-container">
+    <div class="progress-bar"></div>
+    <div class="progress-text">0%</div>
+  </div>
+</div><!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
@@ -34,14 +42,6 @@
     <title>Gary作品集網站｜期盼窮盡所學，豐富您的網站</title>
   </head>
   <body>
-    <!-- 載入畫面結構-->
-    <div class="loader">
-      <div class="loading-text">網頁載入中</div>
-      <div class="progress-container">
-        <div class="progress-bar"></div>
-        <div class="progress-text">0%</div>
-      </div>
-    </div>
     <header class="l-header">
       <input id="nav-switcher" type="checkbox" hidden>
       <label class="o-burger l-header__burger" for="nav-switcher">
@@ -179,6 +179,7 @@
         <canvas id="pdf-canvas"></canvas>
       </div>
     </div>
+    <script src="../dist/js/loader.min.js"> </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
@@ -261,35 +262,6 @@
         pswpModule: PhotoSwipe 
       });
       lightbox.init();
-      
-      //- 載入動畫
-    </script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const progressBar = document.querySelector('.progress-bar');
-        const progressText = document.querySelector('.progress-text');
-        const loader = document.querySelector('.loader');
-      
-        let width = 0;
-      
-        const interval = setInterval(function() {
-          if (width >= 100) {
-            width = 100;
-            clearInterval(interval);
-            setTimeout(function() {
-              loader.style.opacity = '0';
-              setTimeout(function() {
-                loader.style.display = 'none';
-              }, 500);
-            }, 200);
-          } else {
-            width++;
-          }
-      
-          progressBar.style.width = width + '%';
-          progressText.textContent = width + '%';
-        }, 30);
-      });
     </script>
     <section class="u-py-0">
       <div class="container">

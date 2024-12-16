@@ -1,3 +1,4 @@
+include components/_loading.pug
 include ./components/_PortfolioCard.pug
 include ./components/_Card.pug
 
@@ -7,7 +8,6 @@ html(lang="en")
     include layouts/_Settings.pug
     include layouts/_Head.pug
   body
-    include components/_loading.pug
     include layouts/_Header.pug
     include components/_loading.pug
     include components/_pdf-frame.pug
@@ -115,7 +115,8 @@ html(lang="en")
     div#pdf-frame.o-pdf-frame
       .pdf-content
         canvas#pdf-canvas
-    
+
+    script(src="../dist/js/loader.min.js") 
 
     include ./layouts/_Scripts.pug
     script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous")
@@ -142,32 +143,4 @@ html(lang="en")
         pswpModule: PhotoSwipe 
       });
       lightbox.init();
-
-      //- 載入動畫
-    script.
-      document.addEventListener('DOMContentLoaded', function() {
-        const progressBar = document.querySelector('.progress-bar');
-        const progressText = document.querySelector('.progress-text');
-        const loader = document.querySelector('.loader');
-
-        let width = 0;
-
-        const interval = setInterval(function() {
-          if (width >= 100) {
-            width = 100;
-            clearInterval(interval);
-            setTimeout(function() {
-              loader.style.opacity = '0';
-              setTimeout(function() {
-                loader.style.display = 'none';
-              }, 500);
-            }, 200);
-          } else {
-            width++;
-          }
-
-          progressBar.style.width = width + '%';
-          progressText.textContent = width + '%';
-        }, 30);
-      });
     include layouts/_Footer.pug
