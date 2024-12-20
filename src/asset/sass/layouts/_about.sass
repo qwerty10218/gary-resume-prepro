@@ -1,6 +1,7 @@
 .l-about
   &__img-mask
-    height: 100%
+    height: 100vh  // 使背景高度佔據整個視窗高度
+    width: 100%  // 確保寬度佔滿整個視窗
     transform-origin: right bottom
     overflow: hidden
 
@@ -10,26 +11,29 @@
     background-image: url('../img/headshot.jpg')
     background-size: cover
     background-position: center center
-    max-width: 60%
+    max-width: 75%  // 增加圖片的最大寬度
     transition: background 1s cubic-bezier(.23, .83, .7, 1)
 
   &__content-wrap
-    
     padding: var(--spacing-24) 0  // 減少一般的上下間距
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center  // 垂直和水平居中
+    text-align: center  // 文字置中
     
-    // 第一個 content-wrap 保持原本的上間距
     &:first-of-type
       padding-top: var(--spacing-40)
     
-    // 最後一個 content-wrap 保持原本的下間距
     &:last-of-type
       padding-bottom: var(--spacing-40)
 
   &__content:first-child
-    margin-left: -16rem
+    margin-left: 0
+
   .col-md-5.order-md-0.order-1       
       position: relative     
-      padding: var(--spacing-40)     
+      padding: var(--spacing-24)  // 減少內邊距，避免擠壓文字區塊
       height: 100%  // 確保與圖片等高          
       
       &::before       
@@ -37,7 +41,7 @@
         position: absolute       
         inset: 0       
         background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-night-brown) 100%)       
-        opacity: 0.99  // 提高不透明度讓背景更深
+        opacity: 0.99
         z-index: 0      
       
       &::after       
@@ -45,21 +49,21 @@
         position: absolute       
         inset: var(--spacing-2)       
         border: 1px solid var(--color-night-brown)       
-        opacity: 0.6  // 提高邊框可見度      
+        opacity: 0.6
         z-index: 0      
 
       &__img       
-        max-width: 90%  // 調大圖片比例      
+        max-width: 100%  // 增大圖片比例至100%
 
       &__content-wrap       
         position: relative       
         z-index: 1       
-        padding: 0              
+        padding: 0  // 移除內部填充，增加左右寬度
         
         h3         
           color: var(--color-blue-grey)         
           position: relative         
-          margin-bottom: var(--spacing-24)  // 增加標題下方空間         
+          margin-bottom: var(--spacing-24)
           
           &::after           
             content: ''           
@@ -69,18 +73,23 @@
             width: var(--spacing-40)           
             height: 2px           
             background: var(--color-blue-grey)           
-            opacity: 0.6  // 提高分隔線可見度              
+            opacity: 0.6              
         
         p         
           color: var(--color-blue-grey)         
           line-height: 1.8         
-          opacity: 0.95  // 提高文字可見度
+          opacity: 0.95  
+          max-width: 100%  // 確保段落文本佔據最大可用寬度
+          padding: 0 var(--spacing-16)  // 增加內部左右間距
+
   // 手機版樣式
   @media (max-width: 768px)
     .col-md-5.order-md-0.order-1
-      margin: 0 calc(var(--spacing-24) * -1)
-      padding: var(--spacing-32) var(--spacing-24)
-
+      margin: 0 
+      padding: var(--spacing-32) var(--spacing-16)
+      width: 100%
+      margin: 0
+      padding: var(--spacing-32) var(--spacing-16)
       &::before
         background: linear-gradient(160deg, var(--color-secondary) 0%, var(--color-night-brown) 100%)
         opacity: 0.95
@@ -93,22 +102,26 @@
       margin-bottom: var(--spacing-40)
 
     &__img-mask
-      height: 60vw
-      display: flex
-      justify-content: center
+      height: 100vh  // 讓背景高度完全佔滿視窗
+      width: 100%
+      margin: 0
 
     &__img
-      max-width: 80%
-      margin: 0 auto
+      max-width: 100%
+      height: 100%
+      object-fit: cover
+      margin: 0
 
     &__content:first-child
       margin-left: 0
 
     &__content-wrap
-      padding: var(--spacing-24) var(--spacing-24) // 增加左右 padding
-
-      &:first-of-type
-        margin-top: var(--spacing-40)
+      padding: var(--spacing-24) var(--spacing-16)
+      text-align: center  // 確保手機版文字也置中
+      
+      p
+        max-width: 100%
+        padding: 0 var(--spacing-8)
 
   +media(xs)
     &::before
@@ -122,4 +135,4 @@
         margin-top: var(--spacing-40)
 
       p
-        padding-right: var(--spacing-8)  // 可選：為段落添加右側間距
+        padding-right: var(--spacing-8)

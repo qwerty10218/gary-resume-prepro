@@ -16,6 +16,9 @@
     justify-content: flex-end
     &__burger
       display: block
+      &:hover
+        .o-burger__line
+          background-color: var(--color-night-coffee)
 
 .c-nav
   transition: opacity 0.5s, transform 0.5s
@@ -28,6 +31,9 @@
     margin-right: 6.5vw
   &__btn
     line-height: 1.2
+    &:hover
+      color: var(--color-dark-brown)
+      transform: scale(1.05)
   +media(md)
     position: fixed
     left: 0
@@ -55,6 +61,9 @@
     &__btn-wrap
       margin-right: 0 !important
       margin-bottom: var(--spacing-24)
+      &:hover
+        background-color: var(--color-gray-light-80)
+        border-radius: var(--spacing-12)
     &__btn
       text-align: center
       &::after
@@ -75,4 +84,6 @@
     margin-top: var(--spacing-24)
     color: var(--color-blue-grey)
     &:hover
-      color: var(--color-dark-brown)
+      background-color: var(--color-gray-light)
+      transform: translateY(-2px)
+      transition: background-color 0.3s ease, transform 0.3s ease
