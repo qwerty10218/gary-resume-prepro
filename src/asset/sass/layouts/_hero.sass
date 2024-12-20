@@ -1,0 +1,46 @@
+.l-hero
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  +size(100%, 100vh)
+  background-image: url('../img/banner/banner-img01.png')
+  background-size: cover
+  z-index: 10
+  position: relative
+
+.l-hero::before
+  content: ''
+  display: block
+  width: 110px
+  height: 110px
+  border-radius: 50%
+  background-color: var(--color-gray-mid)
+  position: absolute
+  left: -50px
+  bottom: 22%
+  opacity: 0.3
+  z-index: -1
+
+.l-main
+  position: relative
+
+.l-main::before
+  content: ''
+  display: block
+  position: absolute
+  right: 16px
+  top: 70px
+  width: 80px
+  height: 80px
+  border-radius: 70%
+  background-color: var(--color-gray-mid)
+  opacity: 0.4
+  /*透明度
+  pointer-events: none
+  z-index: 11
+
+  /*讓物件層級顯示到最前
+
+
+  /*裝飾球拉到最下面，再連帶其父層(.card .body)一起拉到上層

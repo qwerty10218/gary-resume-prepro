@@ -1,0 +1,125 @@
+.l-about
+  &__img-mask
+    height: 100%
+    transform-origin: right bottom
+    overflow: hidden
+
+  &__img
+    +size(100%)
+    transform-origin: right bottom
+    background-image: url('../img/headshot.jpg')
+    background-size: cover
+    background-position: center center
+    max-width: 60%
+    transition: background 1s cubic-bezier(.23, .83, .7, 1)
+
+  &__content-wrap
+    
+    padding: var(--spacing-24) 0  // 減少一般的上下間距
+    
+    // 第一個 content-wrap 保持原本的上間距
+    &:first-of-type
+      padding-top: var(--spacing-40)
+    
+    // 最後一個 content-wrap 保持原本的下間距
+    &:last-of-type
+      padding-bottom: var(--spacing-40)
+
+  &__content:first-child
+    margin-left: -16rem
+  .col-md-5.order-md-0.order-1       
+      position: relative     
+      padding: var(--spacing-40)     
+      height: 100%  // 確保與圖片等高          
+      
+      &::before       
+        content: ''       
+        position: absolute       
+        inset: 0       
+        background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-night-brown) 100%)       
+        opacity: 0.99  // 提高不透明度讓背景更深
+        z-index: 0      
+      
+      &::after       
+        content: ''       
+        position: absolute       
+        inset: var(--spacing-2)       
+        border: 1px solid var(--color-night-brown)       
+        opacity: 0.6  // 提高邊框可見度      
+        z-index: 0      
+
+      &__img       
+        max-width: 90%  // 調大圖片比例      
+
+      &__content-wrap       
+        position: relative       
+        z-index: 1       
+        padding: 0              
+        
+        h3         
+          color: var(--color-blue-grey)         
+          position: relative         
+          margin-bottom: var(--spacing-24)  // 增加標題下方空間         
+          
+          &::after           
+            content: ''           
+            position: absolute           
+            bottom: -8px           
+            left: 0           
+            width: var(--spacing-40)           
+            height: 2px           
+            background: var(--color-blue-grey)           
+            opacity: 0.6  // 提高分隔線可見度              
+        
+        p         
+          color: var(--color-blue-grey)         
+          line-height: 1.8         
+          opacity: 0.95  // 提高文字可見度
+  // 手機版樣式
+  @media (max-width: 768px)
+    .col-md-5.order-md-0.order-1
+      margin: 0 calc(var(--spacing-24) * -1)
+      padding: var(--spacing-32) var(--spacing-24)
+
+      &::before
+        background: linear-gradient(160deg, var(--color-secondary) 0%, var(--color-night-brown) 100%)
+        opacity: 0.95
+
+    .order-1
+      order: 2 !important
+
+    .order-2
+      order: 1 !important
+      margin-bottom: var(--spacing-40)
+
+    &__img-mask
+      height: 60vw
+      display: flex
+      justify-content: center
+
+    &__img
+      max-width: 80%
+      margin: 0 auto
+
+    &__content:first-child
+      margin-left: 0
+
+    &__content-wrap
+      padding: var(--spacing-24) var(--spacing-24) // 增加左右 padding
+
+      &:first-of-type
+        margin-top: var(--spacing-40)
+
+  +media(xs)
+    &::before
+      +size(40%, 6rem)
+      background-size: 24% 100%
+
+    &__content-wrap
+      padding: var(--spacing-24) var(--spacing-24)  // 增加左右 padding
+
+      &:first-of-type
+        margin-top: var(--spacing-40)
+
+      p
+        padding-right: var(--spacing-8)  // 可選：為段落添加右側間距

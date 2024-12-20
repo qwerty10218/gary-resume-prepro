@@ -1,0 +1,85 @@
+.o-burger
+  cursor: pointer
+  z-index: 999
+  &:not(.is-opened):hover &
+    &__line
+      background-color: var(--color-gray-mid)
+    &__line:nth-child(1)
+      width: 3rem
+    &__line:nth-child(2)
+      width: 5rem
+    &__line:nth-child(3)
+      width: 3rem
+  &__wrap
+    display: flex
+    flex-direction: column
+    align-items: center
+    transition: 0.7s
+  &__line
+    +size(3.6rem, 2px)
+    margin-top: 0.8rem
+    background-color: var(--color-blue-grey)
+    transition: width 0.7s, transform 0.7s
+    &:first-child
+      margin-top: 0
+
+  &.is-opened &
+    &__line
+      width: 4rem
+    &__line:nth-child(1)
+      transform: translateY(1rem) rotate(135deg)
+    &__line:nth-child(2)
+      width: 0
+    &__line:nth-child(3)
+      transform: translateY(-1rem) rotate(-135deg)
+
+  +media(xs)
+    &:hover &
+      &__line:nth-child(1)
+        width: 2.5rem
+      &__line:nth-child(2)
+        width: 4rem
+      &__line:nth-child(3)
+        width: 2.5rem
+    &__line
+      width: 3rem
+      margin-top: 0.6rem
+    &.is-opened &
+      &__line
+        width: 3.6rem
+      &__line:nth-child(1)
+        transform: translateY(0.8rem) rotate(135deg)
+      &__line:nth-child(2)
+        width: 0
+      &__line:nth-child(3)
+        transform: translateY(-0.8rem) rotate(-135deg)
+
+// 加號是相鄰選擇器，選擇下面的兄弟元素
+// 寫兩次 .o-burger 的原因是 :checked 時
+// .o-burger 裡面的 .o-burger__line 改變樣式
+
+// 原寫法
+// #nav-switcher:checked + .o-burger .o-burger__line
+//   width: 4rem
+// #nav-switcher:checked + .o-burger .o-burger__line:nth-child(1)
+//   transform: translateY(1rem) rotate(135deg)
+
+// sass 寫法
+#nav-switcher:checked + .o-burger .o-burger
+  &__line
+    width: 4rem
+  &__line:nth-child(1)
+    transform: translateY(1rem) rotate(135deg)
+  &__line:nth-child(2)
+    width: 0
+  &__line:nth-child(3)
+    transform: translateY(-1rem) rotate(-135deg)
+  +media(xs)
+    &__line
+      width: 3.6rem
+    &__line:nth-child(1)
+      transform: translateY(0.8rem) rotate(135deg)
+    &__line:nth-child(2)
+      width: 0
+    &__line:nth-child(3)
+      transform: translateY(-0.8rem) rotate(-135deg)

@@ -1,0 +1,27 @@
+header.l-header
+  input#nav-switcher(type="checkbox" hidden)
+  label.o-burger.l-header__burger(for="nav-switcher")
+    .o-burger__wrap
+      .o-burger__line
+      .o-burger__line
+      .o-burger__line
+
+  //- c-nav 手機版單純控制開關
+  nav.c-nav
+    //- .c-nav__menu 手機版控制內容
+    .c-nav__menu
+      //- box > wrap
+      //- list > item
+      ul.c-nav__btn-box.--menu
+        li.c-nav__btn-wrap
+          a.c-nav__btn(href="#l-about")
+            span 關於我  
+            span.u-ff-en.u-text-xl About Me
+        li.c-nav__btn-wrap
+          a.c-nav__btn(href="#o-section-title")
+            span 作品集錦  
+            span.u-ff-en.u-text-xl Portfolio
+        li.c-nav__btn-wrap
+          a.c-nav__btn(href="#footer")
+            span 聯絡方式  
+            span.u-ff-en.u-text-xl Contact Me

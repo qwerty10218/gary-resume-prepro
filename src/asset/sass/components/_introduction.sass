@@ -1,0 +1,68 @@
+.o-pdf-frame
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background-color: rgba(0, 0, 0, 0.8)
+  display: none
+  justify-content: center
+  align-items: center
+  z-index: 9999
+
+  &.active
+    display: flex
+
+  .pdf-content
+    width: 80%
+    height: 80%
+    background-color: #fff
+    padding: var(--spacing-24)
+    border-radius: 8px
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1)
+    display: flex
+    justify-content: center
+    align-items: center
+    iframe
+      width: 100%
+      height: 100%
+
+.o-btn.--align-right
+  display: flex
+  justify-content: flex-end
+  width: 100%
+
+.o-btn__link
+  display: inline-block
+  padding: 0 var(--spacing-64)
+  border-radius: 999px
+  border: 1px solid var(--color-secondary)
+  font-family: var(--font-en)
+  font-weight: 700
+  color: var(--color-secondary)
+  text-align: center
+  transition: 0.3s
+  &:hover
+    background-color: var(--color-secondary)
+    color: var(--color-black)
+
+  .l-introduction
+  background-color: #f9f9f9 // 背景顏色
+  padding: 40px 20px // 上下內邊距
+  border-radius: 8px // 圓角邊框
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) // 陰影效果
+
+  .o-section-title
+    font-size: 2rem // 標題字體大小
+    margin-bottom: 20px // 標題下方的間距
+
+  .intro-content
+    font-size: 1.125rem // 內容字體大小
+    line-height: 1.6 // 行高
+    color: #333 // 文字顏色
+
+    a
+      color: #007bff // 鏈接顏色
+      text-decoration: underline // 鏈接下劃線
+      &:hover
+        text-decoration: none // 懸停時去掉下劃線

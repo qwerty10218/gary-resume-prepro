@@ -1,0 +1,29 @@
+.l-lineup
+  &__wrap
+    &:first-child
+      display: flex
+      justify-content: flex-end
+      align-items: flex-end
+    &:nth-child(4)
+      display: flex
+      justify-content: center
+
+    +media(lg)
+      &:nth-child(3)
+        display: flex
+        justify-content: flex-end
+      &:nth-child(4)
+        display: block
+        // justify-content: flex-start
+    +media(sm)
+      &:last-child
+        display: flex
+        justify-content: flex-end
+
+  // +media(lg)
+  //   &__wrap
+  //     &:nth-child(3)
+
+// +media(lg)
+//   .l-lineup
+//     &__wrap

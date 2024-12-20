@@ -1,0 +1,159 @@
+.u-inline
+  display: inline
+.u-inline-block
+  display: inline-block
+.u-block
+  display: block
+
+.u-w-full
+  width: 100%
+.u-h-full
+  height: 100%
+
+// Text
+.u-ff-en
+  font-family: var(--font-en)
+
+.u-text-center
+  text-align: center
+
+
+
+.u-fw-400
+  font-weight: 400
+.u-fw-500
+  font-weight: 500
+.u-fw-700
+  font-weight: 700
+.u-fw-900
+  font-weight: 900
+
+.u-text
+  &-4xl
+    font-size: var(--text-4xl)
+  &-3xl
+    font-size: var(--text-3xl)
+  &-2xl
+    font-size: var(--text-2xl)
+  &-xl
+    font-size: var(--text-xl)
+  &-lg
+    font-size: var(--text-lg)
+  &-md
+    font-size: var(--text-md)
+    font-weight: 700
+
+.u-color-night-coffee
+  color: var(--color-night-coffee)
+    
+// Spacing
+.u-p-0
+  padding: 0 !important
+.u-px-0
+  padding-left: 0 !important
+  padding-right: 0 !important
+.u-py-0
+  padding-top: 0 !important
+  padding-bottom: 0 !important
+.u-pl-0
+  padding-left: 0 !important
+.u-pr-0
+  padding-right: 0 !important
+.u-pt-0
+  padding-top: 0 !important
+.u-pb-0
+  padding-bottom: 0 !important
+.u-ml-auto
+  margin-left: auto
+.u-ml-8
+  margin-left: 8
+.u-mt-auto
+  margin-top: auto
+.u-mt-auto
+  margin: 0 auto
+
+.u-pt-120
+  padding-top: var(--spacing-120)
+.u-pb-120
+  padding-bottom: var(--spacing-120)
+
+.u-pl-24
+  margin-left: 24
+
+.u-my-80
+  margin-top: var(--spacing-80)
+  margin-bottom: var(--spacing-80)
+.u-my-40
+  margin-top: var(--spacing-40)
+  margin-bottom: var(--spacing-40)
+.u-mt-120
+  margin-top: var(--spacing-120)
+.u-mt-80
+  margin-top: var(--spacing-80)
+.u-mt-64
+  margin-top: var(--spacing-64)
+.u-mt-40
+  margin-top: var(--spacing-40)
+.u-mt-24
+  margin-top: var(--spacing-24)
+.u-mt-16
+  margin-top: var(--spacing-16)
+.u-mt-8
+  margin-top: var(--spacing-8)
+
+.u-mb-120
+  margin-bottom: var(--spacing-120)
+.u-mb-80
+  margin-bottom: var(--spacing-80)
+.u-mb-64
+  margin-bottom: var(--spacing-64)
+.u-mb-40
+  margin-bottom: var(--spacing-40)
+.u-mb-24
+  margin-bottom: var(--spacing-24)
+.u-mb-16
+  margin-bottom: var(--spacing-16)
+.u-mb-8
+  margin-bottom: var(--spacing-8)
+
+[class*="u-icon"]
+  vertical-align: middle
+.u-icon
+  font-size: 2.4rem
+  &-lg
+    font-size: 4rem
+  &-md
+    font-size: 2.8rem
+  &-sm
+    font-size: 1.8rem
+
+// 使用 img-ratio 做等比例的模板
+// 再將 .object-fit 加上 .abs 套上去
+.u-img-ratio
+  // padding 給 % 單位，會依據父層的寬度
+  // 正方形 1 : 1 = 100% : 100%
+  // padding-bottom: 100%;
+  // 16 : 9 = 100% : X
+  // 中間相乘再除以第三個值 = X
+  // padding-bottom: 56.25%;
+  --img-w-ratio: 4
+  --img-h-ratio: 3
+  // "*" 乘法
+  // "/" 除法
+  padding-bottom: calc(100% * var(--img-h-ratio) / var(--img-w-ratio))
+
+// 如同 background-image（用 img 搭配 object-fit 有助於 SEO 搜尋）
+.u-object-fit
+  +size(100%)
+  object-fit: cover
+  object-position: center center
+  &.--abs
+    position: absolute
+    left: 0
+    top: 0
+  &.--right
+    object-position: right center
+  &.--bottom
+    object-position: center bottom
+
+    

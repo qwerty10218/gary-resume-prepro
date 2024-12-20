@@ -1,0 +1,167 @@
+include ./components/_PortfolioCard.pug
+include ./components/_Card.pug
+
+doctype html
+html(lang="en")
+  head
+    include layouts/_Settings.pug
+    include layouts/_Head.pug
+  body
+    include components/_loading.pug
+    include layouts/_Header.pug
+
+    main.l-main
+      //- 引入插件基本步驟
+      //- 引入 CSS、引入 JS、寫插件要求的 HTML 結構、用 JS 初始化插件
+
+      section.l-hero.u-text-center
+        //- h2.u-ff-en.u-text-4xl.u-fw-900.u-color-secondary LINEUP
+        h2.u-text-3xl.u-fw-900(data-aos="fade-up") 你好，
+          span.u-inline.u-color-night-coffee(data-aos="fade-up") 我是德詮
+        p.u-my-80 我相信設計不僅是傳遞資訊，更是運用設計與色彩學來創造視覺體驗。
+          br
+          | 簡約、優雅與質感，是每一個作品的靈魂。
+        a.u-btn-hover.u-text-2xl.u-fw-900.o-btn__totop(href="#l-about") 瞭解我
+
+      section.l-lineup#o-section-title
+        .container
+          h2.o-section-title.u-mb-80(data-aos="fade-up") 作品集錦        
+        .container.u-text-align
+          .row.--gap
+            .col-md-4.l-lineup__wrap
+              article.c-portfolio-card
+                .c-portfolio-card__link
+                  h3.u-text-xl.u-fw-900(data-aos="fade-up") VI設計
+                  .c-portfolio-card__img-mask
+                    a(href="img/VI/VI-design.jpg" data-pswp-width="843" data-pswp-height="596" target="_blank")
+                      img.u-obejct-fit(src="img/VI/VI-design.jpg" alt="vi設計呈現")
+                    a(href="img/VI/VI-design2-full.jpg" data-pswp-width="843" data-pswp-height="596" target="_blank")
+                      img.u-obejct-fit(src="img/VI/VI-design2.png" alt="vi設計呈現")
+            .col-md-4.l-lineup__wrap
+              article.c-portfolio-card
+                .c-portfolio-card__link
+                  h3.u-text-xl.u-fw-900(data-aos="fade-up") 三折式DM設計
+                  .c-portfolio-card__img-mask
+                    a(href="img/DM/DM_mockup2.jpg" data-pswp-width="1754" data-pswp-height="1241" target="_blank")
+                      img.u-obejct-fit(src="img/DM/DM_mockup2.jpg" alt="DM設計呈現")
+                    a(href="img/DM/DM_mockup1.jpg" data-pswp-width="1280" data-pswp-height="960" target="_blank")
+                      img.u-obejct-fit(src="img/DM/DM_mockup1.jpg" alt="DM設計呈現")
+            .col-md-4.l-lineup__wrap 
+              article.c-portfolio-card.--size-lg
+                a.c-portfolio-card__link(href="##")
+                  h3.u-text-xl.u-fw-900(data-aos="fade-up") 名片系列
+                  .c-portfolio-card__img-mask
+                    a(href="img/business-card/Food-Card.jpg" data-pswp-width="1754" data-pswp-height="1241" target="_blank")
+                      img.u-obejct-fit(src="img/business-card/Food-Card.jpg" alt="阿財牛肉湯-食物名片")
+                    a(href="img/business-card/Fashion Store-Card.jpg" data-pswp-width="1280" data-pswp-height="960" target="_blank")
+                      img.u-obejct-fit(src="img/business-card/Fashion Store-Card.jpg" alt="阿財牛肉湯-食物名片")
+            .col-md-4.l-lineup__wrap 
+              article.c-portfolio-card.--size-lg
+                a.c-portfolio-card__link(href="##")
+                  h3.u-text-xl.u-fw-900(data-aos="fade-up") 海報系列
+                  .c-portfolio-card__img-mask
+                    a(href="img/poster/halloween-poster1.jpg" data-pswp-width="818" data-pswp-height="1157" target="_blank")
+                      img.u-obejct-fit(src="img/poster/halloween-poster1.jpg" alt="萬聖節海報作品")
+            .col-md-4.l-lineup__wrap
+              article.c-portfolio-card.--size-lg
+                a.c-portfolio-card__link(href="##")
+                  h3.u-text-xl.u-fw-900(data-aos="fade-up") 名片設計理念
+                  .c-portfolio-card__img-mask
+                    a(href="img/business-card/DesignBrief.jpg" data-pswp-width="818" data-pswp-height="1157" target="_blank")
+                      img.u-obejct-fit(src="img/business-card/DesignBrief.jpg" alt="名片設計理念")
+            .col-md-4.l-lineup__wrap
+              article.c-portfolio-card
+                a.c-portfolio-card__link(href="##")
+                  h3.u-text-xl.u-fw-900(data-aos="fade-up") 包裝設計
+                  .c-portfolio-card__img-mask
+                    img.u-obejct-fit(src="img/package/Lays.png" alt="樂事包裝")
+
+
+
+      section.--gradient.l-about.l-introduction#l-about(data-aos="fade-up")
+        .container
+          h2.o-section-title.u-mb-80(data-aos="fade-up") 關於我
+
+        .container.--align-left
+          .row
+            .col-md-7.order-md-0.order-2
+              .l-about__img-mask
+                .l-about__img
+            .col-md-5.order-md-0.order-1
+              .l-about__content-wrap
+                h3.u-text-2xl.u-mb-16 人格特質
+                p.u-fw-500 對於服務人群充滿熱忱以及獨立自主，且不畏懼到新環境學習新事物。認為我的優勢有兩點：觀察細微並主動學習；能精準及準時的完成上層所指派的任務，是值得信任的工作夥伴。
+              .l-about__content-wrap(data-aos="fade-up")
+                h3.u-text-2xl.u-mb-16 工作經驗
+                p.u-fw-500 在上一份工作，我所學到的：團隊配合及協作；很好的應對及配合性質；文件歸檔及整理；修復電腦、資訊軟體BUG除錯。
+              .l-about__content-wrap(data-aos="fade-up")
+                h3.u-text-2xl.u-mb-16 未來期許
+                p.u-fw-500 渴望學習更多對自己有用的資訊及能力，同時尋找並實踐更多的價值及不斷的自我突破，如果您對我的經歷有興趣，請不吝聯絡我，感謝也祝您有美好的一天。
+              .l-about__content-wrap(data-aos="fade-up")
+                h3.u-text-2xl.u-mb-16 進修＆學習
+                p.u-fw-500 基於自己的興趣，在每周假日時，安排自己學習平面設計＆網頁開發的課程。目前掌握的技能及學習軌跡為：會使用Photoshop、Illustrator、進行排版及設計；網頁設計課程-正在學習CSS、HTML切版，待課程結束，方能設計一個RWD網頁版面。
+
+              .u-mt-64
+                //-- 顯示 PDF 的按鈕，觸發 JavaScript 顯示 PDF 框
+                .o-btn.--align-right
+                  a.o-btn__link(href="#" onclick="showPdf()") 了解更多
+    //- 顯示 PDF 框
+    div#pdf-frame.o-pdf-frame
+      .pdf-content
+        canvas#pdf-canvas
+
+    include ./layouts/_Scripts.pug
+    script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous")
+    script(src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js")
+    script.
+      document.addEventListener('DOMContentLoaded', function () {
+        const swiper = new Swiper('.l-hero__swiper', {
+          effect: 'fade',
+          longSwipesRatio: 0.1,
+          loop: true,
+          speed: 1200,
+          autoplay: {
+            delay: 3000,
+            disableOnInteraction: true
+          }
+        });
+      });
+    script(src="js/photoswipe.umd.min.js")
+    script(src="js/photoswipe-lightbox.umd.min.js")
+    script.
+      const lightbox = new PhotoSwipeLightbox({
+        gallery: '.c-portfolio-card__img-mask',
+        children: 'a',
+        pswpModule: PhotoSwipe 
+      });
+      lightbox.init();
+
+      //- 載入動畫
+    script.
+      document.addEventListener('DOMContentLoaded', function() {
+        const progressBar = document.querySelector('.progress-bar');
+        const progressText = document.querySelector('.progress-text');
+        const loader = document.querySelector('.loader');
+
+        let width = 0;
+
+        const interval = setInterval(function() {
+          if (width >= 100) {
+            width = 100;
+            clearInterval(interval);
+            setTimeout(function() {
+              loader.style.opacity = '0';
+              setTimeout(function() {
+                loader.style.display = 'none';
+              }, 500);
+            }, 200);
+          } else {
+            width += 3; // 每次增加 2
+          }
+
+          progressBar.style.width = width + '%';
+          progressText.textContent = width + '%';
+        }, 40); // 可以保持 30ms 间隔
+      });
+
+    include layouts/_Footer.pug

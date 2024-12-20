@@ -1,0 +1,47 @@
+=media($point)
+  @if ($point == xxl)
+    @media (max-width: 1600px)
+      @content
+  @if ($point == xl)
+    @media (max-width: 1399.98px)
+      @content
+  @if ($point == lg)
+    @media (max-width: 1199.98px)
+      @content
+  @if ($point == ipad-portrait)
+    @media (max-width: 1024px) and (orientation: portrait)
+      @content
+  @if ($point == ipad)
+    @media (max-width: 1024px)
+      @content
+  @if ($point == md)
+    @media (max-width: 991.98px)
+      @content
+  @if ($point == sm)
+    @media (max-width: 767.98px)
+      @content
+  @if ($point == xs)
+    @media (max-width: 575.98px)
+      @content
+@mixin btn($align: left)
+.o-btn
+  width: 100%
+  &.--align-right
+    display: flex
+    justify-content: flex-end
+  &__link
+    display: inline-block
+    padding: 0 var(--spacing-64)
+    border-radius: 999px
+    border: 1px solid var(--color-secondary)
+    font-family: var(--font-en)
+    font-weight: 700
+    color: var(--color-secondary)
+    text-align: center
+    transition: 0.3s
+    &:hover
+      background-color: var(--color-secondary)
+      color: var(--color-black)
+=size($w, $h: $w)
+  width: $w
+  height: $h

@@ -29,11 +29,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf_viewer.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.18/dist/lenis.css">
-    <link rel="stylesheet" href="https://qwerty10218.github.io/gary-resume-prepro/css/aos.min.css">
-    <link rel="stylesheet" href="https://qwerty10218.github.io/gary-resume-prepro/css/style.css">
+    <link rel="stylesheet" href="http://127.0.0.1:5500/dist/css/aos.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1:5500/dist/css/style.css">
     <title>Gary作品集網站｜期盼窮盡所學，豐富您的網站</title>
   </head>
   <body>
+    <div class="loader">
+      <div class="coffee-beans-container">
+        <div class="coffee-bean"></div>
+      </div>
+      <div class="loading-text">網頁載入中</div>
+      <div class="progress-container">
+        <div class="progress-bar"></div>
+        <div class="progress-text">0%</div>
+      </div>
+    </div>
     <header class="l-header">
       <input id="nav-switcher" type="checkbox" hidden>
       <label class="o-burger l-header__burger" for="nav-switcher">
@@ -46,90 +56,71 @@
       <nav class="c-nav">
         <div class="c-nav__menu">
           <ul class="c-nav__btn-box --menu">
-            <li class="c-nav__btn-wrap"><a class="c-nav__btn" href="##"><span>關於我  </span><span class="u-ff-en u-text-xl">About Me</span></a></li>
-            <li class="c-nav__btn-wrap"><a class="c-nav__btn" href="#lineup"><span>作品集錦  </span><span class="u-ff-en u-text-xl">Portfolio</span></a></li>
-            <li class="c-nav__btn-wrap"><a class="c-nav__btn" href="#section.l-lineup"><span>聯絡方式  </span><span class="u-ff-en u-text-xl">Contact Me</span></a></li>
+            <li class="c-nav__btn-wrap"><a class="c-nav__btn" href="#l-about"><span>關於我  </span><span class="u-ff-en u-text-xl">About Me</span></a></li>
+            <li class="c-nav__btn-wrap"><a class="c-nav__btn" href="#o-section-title"><span>作品集錦  </span><span class="u-ff-en u-text-xl">Portfolio</span></a></li>
+            <li class="c-nav__btn-wrap"><a class="c-nav__btn" href="#footer"><span>聯絡方式  </span><span class="u-ff-en u-text-xl">Contact Me</span></a></li>
           </ul>
         </div>
       </nav>
-    </header><!-- Button trigger modal -->
-    <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Launch demo modal</button><!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <iframe src="../../dist/pdf/resume.pdf" width="100%" height="600px" loading="lazy" title="PDF-file"></iframe>
-          </div>
-          <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
-            <button class="btn btn-primary" type="button">Save changes</button>
-          </div>
-        </div>
-      </div>
-    </div>
+    </header>
     <main class="l-main">
-      <section class="l-hero u-text-center" data-aos="fade" data-aos-offset="0">
-        <h2 class="u-text-3xl u-fw-900">你好，<span class="u-inline u-color-night-coffee">我是德詮</span></h2>
-        <p class="u-my-80">我相信設計不僅是傳遞資訊，更是運用設計與色彩學來創造視覺體驗。<br>簡約、優雅與質感，是每一個作品的靈魂。</p>
-        <button class="u-btn-hover u-text-3xl u-fw-900">瞭解我</button>
+      <section class="l-hero u-text-center">
+        <h2 class="u-text-3xl u-fw-900" data-aos="fade-up">你好，<span class="u-inline u-color-night-coffee" data-aos="fade-up">我是德詮</span></h2>
+        <p class="u-my-80">我相信設計不僅是傳遞資訊，更是運用設計與色彩學來創造視覺體驗。<br>簡約、優雅與質感，是每一個作品的靈魂。</p><a class="u-btn-hover u-text-2xl u-fw-900 o-btn__totop" href="#l-about">瞭解我</a>
       </section>
-      <section class="l-lineup">
+      <section class="l-lineup" id="o-section-title">
         <div class="container">
-          <h2 class="o-section-title u-mb-80" data-aos="fade-up">作品集錦       </h2>
+          <h2 class="o-section-title u-mb-80" data-aos="fade-up">作品集錦        </h2>
         </div>
         <div class="container u-text-align">
           <div class="row --gap">
             <div class="col-md-4 l-lineup__wrap">
               <article class="c-portfolio-card">
                 <div class="c-portfolio-card__link">
-                  <h3 class="u-text-xl u-fw-900">VI設計</h3>
-                  <div class="c-portfolio-card__img-mask"><a href="img/VI/VI-design.jpg" data-pswp-width="843" data-pswp-height="596" target="_blank"><img class="u-obejct-fit js-lazy" data-src="img/VI/VI-design.jpg" alt="vi設計呈現"></a><a href="img/VI/VI-design2-full.jpg" data-pswp-width="843" data-pswp-height="596" target="_blank"><img class="u-obejct-fit js-lazy" data-src="img/VI/VI-design2.png" alt="vi設計呈現"></a></div>
+                  <h3 class="u-text-xl u-fw-900" data-aos="fade-up">VI設計</h3>
+                  <div class="c-portfolio-card__img-mask"><a href="img/VI/VI-design.jpg" data-pswp-width="843" data-pswp-height="596" target="_blank"><img class="u-obejct-fit" src="img/VI/VI-design.jpg" alt="vi設計呈現"></a><a href="img/VI/VI-design2-full.jpg" data-pswp-width="843" data-pswp-height="596" target="_blank"><img class="u-obejct-fit" src="img/VI/VI-design2.png" alt="vi設計呈現"></a></div>
                 </div>
               </article>
             </div>
             <div class="col-md-4 l-lineup__wrap">
               <article class="c-portfolio-card">
                 <div class="c-portfolio-card__link">
-                  <h3 class="u-text-xl u-fw-900">三折式DM設計</h3>
-                  <div class="c-portfolio-card__img-mask"><a href="img/DM/DM_mockup2.jpg" data-pswp-width="1754" data-pswp-height="1241" target="_blank"><img class="u-obejct-fit js-lazy" data-src="img/DM/DM_mockup2.jpg" alt="DM設計呈現"></a><a href="img/DM/DM_mockup1.jpg" data-pswp-width="1280" data-pswp-height="960" target="_blank"><img class="u-obejct-fit js-lazy" data-src="img/DM/DM_mockup1.jpg" alt="DM設計呈現"></a></div>
+                  <h3 class="u-text-xl u-fw-900" data-aos="fade-up">三折式DM設計</h3>
+                  <div class="c-portfolio-card__img-mask"><a href="img/DM/DM_mockup2.jpg" data-pswp-width="1754" data-pswp-height="1241" target="_blank"><img class="u-obejct-fit" src="img/DM/DM_mockup2.jpg" alt="DM設計呈現"></a><a href="img/DM/DM_mockup1.jpg" data-pswp-width="1280" data-pswp-height="960" target="_blank"><img class="u-obejct-fit" src="img/DM/DM_mockup1.jpg" alt="DM設計呈現"></a></div>
                 </div>
               </article>
             </div>
             <div class="col-md-4 l-lineup__wrap"> 
               <article class="c-portfolio-card --size-lg"><a class="c-portfolio-card__link" href="##">
-                  <h3 class="u-text-xl u-fw-900">名片系列</h3>
-                  <div class="c-portfolio-card__img-mask"><a href="img/business-card/Food-Card.jpg" data-pswp-width="1754" data-pswp-height="1241" target="_blank"><img class="u-obejct-fit js-lazy" data-src="img/business-card/Food-Card.jpg" alt="阿財牛肉湯-食物名片"></a><a href="img/business-card/Fashion Store-Card.jpg" data-pswp-width="1280" data-pswp-height="960" target="_blank"><img class="u-obejct-fit js-lazy" data-src="img/business-card/Fashion Store-Card.jpg" alt="阿財牛肉湯-食物名片"></a></div></a></article>
+                  <h3 class="u-text-xl u-fw-900" data-aos="fade-up">名片系列</h3>
+                  <div class="c-portfolio-card__img-mask"><a href="img/business-card/Food-Card.jpg" data-pswp-width="1754" data-pswp-height="1241" target="_blank"><img class="u-obejct-fit" src="img/business-card/Food-Card.jpg" alt="阿財牛肉湯-食物名片"></a><a href="img/business-card/Fashion Store-Card.jpg" data-pswp-width="1280" data-pswp-height="960" target="_blank"><img class="u-obejct-fit" src="img/business-card/Fashion Store-Card.jpg" alt="阿財牛肉湯-食物名片"></a></div></a></article>
             </div>
             <div class="col-md-4 l-lineup__wrap"> 
               <article class="c-portfolio-card --size-lg"><a class="c-portfolio-card__link" href="##">
-                  <h3 class="u-text-xl u-fw-900">海報系列</h3>
-                  <div class="c-portfolio-card__img-mask"><a href="img/poster/halloween-poster1.jpg" data-pswp-width="818" data-pswp-height="1157" target="_blank"><img class="u-obejct-fit js-lazy" data-src="img/poster/halloween-poster1.jpg" alt="萬聖節海報作品"></a></div></a></article>
+                  <h3 class="u-text-xl u-fw-900" data-aos="fade-up">海報系列</h3>
+                  <div class="c-portfolio-card__img-mask"><a href="img/poster/halloween-poster1.jpg" data-pswp-width="818" data-pswp-height="1157" target="_blank"><img class="u-obejct-fit" src="img/poster/halloween-poster1.jpg" alt="萬聖節海報作品"></a></div></a></article>
             </div>
             <div class="col-md-4 l-lineup__wrap">
               <article class="c-portfolio-card --size-lg"><a class="c-portfolio-card__link" href="##">
-                  <h3 class="u-text-xl u-fw-900">名片設計理念</h3>
-                  <div class="c-portfolio-card__img-mask"><a href="img/business-card/DesignBrief.jpg" data-pswp-width="818" data-pswp-height="1157" target="_blank"><img class="u-obejct-fit js-lazy" data-src="img/business-card/DesignBrief.jpg" alt="名片設計理念"></a></div></a></article>
+                  <h3 class="u-text-xl u-fw-900" data-aos="fade-up">名片設計理念</h3>
+                  <div class="c-portfolio-card__img-mask"><a href="img/business-card/DesignBrief.jpg" data-pswp-width="818" data-pswp-height="1157" target="_blank"><img class="u-obejct-fit" src="img/business-card/DesignBrief.jpg" alt="名片設計理念"></a></div></a></article>
             </div>
             <div class="col-md-4 l-lineup__wrap">
-              <article class="c-portfolio-card --size-lg"><a class="c-portfolio-card__link" href="##">
-                  <h3 class="u-text-xl u-fw-900">包裝設計</h3>
-                  <div class="c-portfolio-card__img-mask"><a href="img/package/Lays.png" data-pswp-width="818" data-pswp-height="1157" target="_blank"><img class="u-obejct-fit js-lazy" data-src="img/package/Lays.png" alt="樂事包裝"></a></div></a></article>
+              <article class="c-portfolio-card"><a class="c-portfolio-card__link" href="##">
+                  <h3 class="u-text-xl u-fw-900" data-aos="fade-up">包裝設計</h3>
+                  <div class="c-portfolio-card__img-mask"><img class="u-obejct-fit" src="img/package/Lays.png" alt="樂事包裝"></div></a></article>
             </div>
           </div>
         </div>
       </section>
-      <section class="--gradient l-about l-introduction">
+      <section class="--gradient l-about l-introduction" id="l-about" data-aos="fade-up">
         <div class="container">
           <h2 class="o-section-title u-mb-80" data-aos="fade-up">關於我</h2>
         </div>
         <div class="container --align-left">
           <div class="row">
             <div class="col-md-7 order-md-0 order-2">
-              <div class="l-about__img-mask u-pl-24">
+              <div class="l-about__img-mask">
                 <div class="l-about__img"></div>
               </div>
             </div>
@@ -146,12 +137,12 @@
                 <h3 class="u-text-2xl u-mb-16">未來期許</h3>
                 <p class="u-fw-500">渴望學習更多對自己有用的資訊及能力，同時尋找並實踐更多的價值及不斷的自我突破，如果您對我的經歷有興趣，請不吝聯絡我，感謝也祝您有美好的一天。</p>
               </div>
-              <div class="l-about__content" data-aos="fade-up">
+              <div class="l-about__content-wrap" data-aos="fade-up">
                 <h3 class="u-text-2xl u-mb-16">進修＆學習</h3>
-                <p class="u-fw-500">基於自己的興趣，在每周假日時，安排自己學習平面設計＆網頁開發的課程。目前掌握的技能及學習軌跡為：會使用Photoshop、Illustrator、進行排版及設計；網頁設計課程-正在學習CSS、HTML切版，待課程結束，方能設計一個rwd網頁版面。</p>
+                <p class="u-fw-500">基於自己的興趣，在每周假日時，安排自己學習平面設計＆網頁開發的課程。目前掌握的技能及學習軌跡為：會使用Photoshop、Illustrator、進行排版及設計；網頁設計課程-正在學習CSS、HTML切版，待課程結束，方能設計一個RWD網頁版面。</p>
               </div>
               <div class="u-mt-64">
-                <div class="o-btn --align-right"><a class="o-btn__link" href="pdf/resume.pdf" target="_blank" data-aos="fade-up">了解更多</a></div>
+                <div class="o-btn --align-right"><a class="o-btn__link" href="#" onclick="showPdf()">了解更多</a></div>
               </div>
             </div>
           </div>
@@ -166,8 +157,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
-    <script src="https://qwerty10218.github.io/gary-resume-prepro/js/lazyload.min.js"></script>
-    <script src="https://qwerty10218.github.io/gary-resume-prepro/js/aos.min.js"></script>
+    <script src="http://127.0.0.1:5500/dist/js/lazyload.min.js"></script>
+    <script src="http://127.0.0.1:5500/dist/js/aos.min.js"></script>
     <script>
       AOS.init({
         // 設定物件頂部距離視窗底部多少才動畫
@@ -176,7 +167,7 @@
         //- once: true
       });
     </script>
-    <script src="https://qwerty10218.github.io/gary-resume-prepro/js/main.min.js"> </script>
+    <script src="http://127.0.0.1:5500/dist/js/main.min.js"> </script>
     <script>
       document.addEventListener("DOMContentLoaded", function() {
         // 設定 PDF.js 的 workerSrc 路徑
@@ -267,20 +258,21 @@
               }, 500);
             }, 200);
           } else {
-            width++;
+            width += 3; // 每次增加 2
           }
       
           progressBar.style.width = width + '%';
           progressText.textContent = width + '%';
-        }, 30);
+        }, 40); // 可以保持 30ms 间隔
       });
+      
     </script>
     <section class="u-py-0">
       <div class="container">
         <div class="o-btn --align-center"><a class="o-btn__totop" onclick="lenis.scrollTo(0)">回到首頁</a></div>
       </div>
     </section>
-    <footer class="footer u-mt-120 u-pb-40">
+    <footer class="footer u-mt-120 u-pb-40" id="footer">
       <div class="footer-content u-text-center">
         <div class="footer-section">
           <h3 class="u-text-xl u-fw-700 u-my-40">聯絡方式</h3>
@@ -290,7 +282,7 @@
                 <p class="u-mb-16"><i class="fas fa-envelope u-icon-sm"></i><a class="u-text-md" href="mailto:your.email@example.com">qwerty10218@gmail.com</a></p>
               </div>
               <div class="contact-right">
-                <p class="u-mb-16"><i class="fas fa-phone u-icon-sm"></i><span class="u-text-md">+886 912-345-678</span></p>
+                <p class="u-mb-16"><i class="fas fa-phone u-icon-sm"></i><span class="u-text-md">+886 968-800-996</span></p>
               </div>
             </div>
             <div class="social-links u-mb-24"><a href="https://www.instagram.com/youraccount" target="_blank" aria-label="Instagram"><i class="fab fa-instagram u-icon-md"></i></a><a href="https://www.facebook.com/youraccount" target="_blank" aria-label="Facebook"><i class="fab fa-facebook u-icon-md"></i></a></div>

@@ -1,0 +1,52 @@
+.footer
+  background-color: var(--color-secondary)
+  color: var(--color-blue-grey)
+  
+  &-content
+    max-width: 1200px
+    margin: 0 auto
+    padding: 0 var(--spacing-24)
+    display: flex
+    justify-content: center
+    gap: var(--spacing-64)
+    flex-wrap: wrap
+    
+    @media (max-width: 768px)
+      flex-direction: column
+      gap: var(--spacing-40)
+  
+  .contact-info
+    p
+      display: flex
+      align-items: center
+      justify-content: center
+      gap: var(--spacing-16)
+      
+      i
+        color: var(--color-night-coffee)
+      
+      a
+        color: #fff
+        text-decoration: none
+        transition: all 0.3s ease
+        
+        &:hover
+          opacity: 0.8
+  
+  .social-links
+    display: flex
+    justify-content: center
+    gap: var(--spacing-24)
+    
+    a
+      color: #fff
+      transition: all 0.3s ease
+      
+      &:hover
+        transform: translateY(-3px)
+        opacity: 0.8
+  
+  &-bottom
+    text-align: center
+    padding-top: var(--spacing-24)
+    border-top: 1px solid rgba(255, 255, 255, 0.1)

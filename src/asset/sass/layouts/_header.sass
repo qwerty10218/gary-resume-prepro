@@ -1,0 +1,78 @@
+.l-header
+  position: fixed
+  left: 0
+  top: 0
+  width: 100%
+  z-index: 99
+  display: flex
+  justify-content: center
+  align-items: center
+  padding: var(--spacing-24) 3.5vw
+  background-color: var(--color-night-brown)
+  &__burger
+    display: none
+  +media(md)
+    padding: var(--spacing-16) 4vw
+    justify-content: flex-end
+    &__burger
+      display: block
+
+.c-nav
+  transition: opacity 0.5s, transform 0.5s
+  &__menu
+    display: flex
+  &__btn-box
+    display: flex
+    color: var(--color-blue-grey)
+  &__btn-wrap:not(:last-child)
+    margin-right: 6.5vw
+  &__btn
+    line-height: 1.2
+  +media(md)
+    position: fixed
+    left: 0
+    top: 0
+    +size(100%)
+    background-color: rgba(155, 72, 25, 0.6)// 透明度为 60%
+    opacity: 0
+    pointer-events: none
+    transition: opacity 0.5s, transform 0.5s
+    transform: translateY(-100%)
+    &.is-opened
+      opacity: 1
+      pointer-events: auto
+      transform: translateY(0)
+      overflow: auto
+    &__menu
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      width: 100%
+      min-height: 100%
+    &__btn-box:not(.--icon)
+      flex-direction: column
+      align-items: center
+    &__btn-wrap
+      margin-right: 0 !important
+      margin-bottom: var(--spacing-24)
+    &__btn
+      text-align: center
+      &::after
+        display: none
+
+#nav-switcher:checked ~ .c-nav
+  opacity: 1
+  pointer-events: auto
+  transform: translateY(0)
+
+.c-nav__btn-box .c-nav__btn
+  cursor: pointer
+
+.c-nav__btn-box .c-nav__btn-wrap
+  &.--close
+    display: block
+    font-size: 1.5rem
+    margin-top: var(--spacing-24)
+    color: var(--color-blue-grey)
+    &:hover
+      color: var(--color-dark-brown)

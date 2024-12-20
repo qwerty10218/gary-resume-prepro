@@ -1,0 +1,17 @@
+mixin ArtistCard(options)
+  -
+    // Object.assign(預設, 傳進來的) 用來合併預設物件值及傳進來的 options 值
+    const props = Object.assign({
+      name: '',
+      img: '',
+      size: '', // md, lg
+      direction: '', // reverse
+      link: '##'
+    }, options);
+
+  //- classes.join(' ') => "--size-lg --reverse"
+  article.c-artist-card(class=classes.join(' ') data-aos="fade-up")
+    a.c-artist-card__link(href=props.link)
+      h3.u-text-xl.u-fw-900 #{props.name}
+      .c-artist-card__img-mask
+        img.u-object-fit(src=props.img, alt=`${props.name} `)
