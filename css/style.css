@@ -1351,8 +1351,8 @@ section {
   position: absolute;
   -webkit-animation: coffee-fly-in 5s ease-in-out infinite;
           animation: coffee-fly-in 5s ease-in-out infinite;
-  -webkit-animation-delay: 0.2996787551s;
-          animation-delay: 0.2996787551s;
+  -webkit-animation-delay: 0.0313863247s;
+          animation-delay: 0.0313863247s;
 }
 
 @media (max-width: 768px) {
